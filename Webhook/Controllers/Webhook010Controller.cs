@@ -162,7 +162,10 @@ namespace Webhook.Controllers
             recipients.Signers.Add(new Signer
             {
                 Name = "Mario Beko",
-                Email = WebhookLibrary.GetFakeEmail("Mario Beko")
+                Email = WebhookLibrary.GetFakeEmail("Mario Beko"),
+                RecipientId = "2",
+                RoutingOrder = "1",
+                Tabs = tabs
             });
             recipients.CarbonCopies = new List<CarbonCopy>();
             recipients.CarbonCopies.Add(carbon_copy);
