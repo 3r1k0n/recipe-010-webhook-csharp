@@ -150,6 +150,12 @@ namespace Webhook.Controllers
             signer.RoutingOrder = "1";
             signer.Tabs = tabs;
 
+            Signer signer2 = new Signer();
+            signer2.Email = "erik.percic0708@gmail.com";
+            signer2.Name = "Mario Beko";
+            signer2.RecipientId = "2";
+            signer2.RoutingOrder = "1";
+
             CarbonCopy carbon_copy = new CarbonCopy();
             carbon_copy.Email = ds_cc1_email;
             carbon_copy.Name = ds_cc1_name;
@@ -159,14 +165,7 @@ namespace Webhook.Controllers
             Recipients recipients = new Recipients();
             recipients.Signers = new List<Signer>();
             recipients.Signers.Add(signer);
-            recipients.Signers.Add(new Signer
-            {
-                Name = "Mario Beko",
-                Email = "erik.percic0708@gmail.com",
-                RecipientId = "2",
-                RoutingOrder = "1",
-                Tabs = tabs
-            });
+            recipients.Signers.Add(signer2);
             recipients.CarbonCopies = new List<CarbonCopy>();
             recipients.CarbonCopies.Add(carbon_copy);
 
@@ -177,7 +176,6 @@ namespace Webhook.Controllers
             envelope_definition.Recipients = recipients;
             envelope_definition.EventNotification = event_notification;
             envelope_definition.Status = "sent";
-            envelope_definition.AllowRecipientRecursion = "true";
 
             EnvelopesApi envelopesApi = new EnvelopesApi(WebhookLibrary.Configuration);
 
