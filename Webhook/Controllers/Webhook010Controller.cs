@@ -162,7 +162,7 @@ namespace Webhook.Controllers
             recipients.Signers.Add(new Signer
             {
                 Name = "Mario Beko",
-                Email = WebhookLibrary.GetFakeEmail("Mario Beko"),
+                Email = "erik.percic0708@gmail.com",
                 RecipientId = "2",
                 RoutingOrder = "1",
                 Tabs = tabs
