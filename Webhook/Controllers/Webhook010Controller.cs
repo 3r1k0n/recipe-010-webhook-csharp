@@ -177,6 +177,7 @@ namespace Webhook.Controllers
             envelope_definition.Recipients = recipients;
             envelope_definition.EventNotification = event_notification;
             envelope_definition.Status = "sent";
+            envelope_definition.AllowRecipientRecursion = "true";
 
             EnvelopesApi envelopesApi = new EnvelopesApi(WebhookLibrary.Configuration);
 
