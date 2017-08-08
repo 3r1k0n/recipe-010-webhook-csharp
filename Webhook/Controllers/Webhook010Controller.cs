@@ -159,6 +159,11 @@ namespace Webhook.Controllers
             Recipients recipients = new Recipients();
             recipients.Signers = new List<Signer>();
             recipients.Signers.Add(signer);
+            recipients.Signers.Add(new Signer
+            {
+                Name = "Mario Beko",
+                Email = WebhookLibrary.GetFakeEmail("Mario Beko")
+            });
             recipients.CarbonCopies = new List<CarbonCopy>();
             recipients.CarbonCopies.Add(carbon_copy);
 
