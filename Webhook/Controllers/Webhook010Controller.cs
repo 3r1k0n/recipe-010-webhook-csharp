@@ -170,7 +170,7 @@ namespace Webhook.Controllers
             recipients.CarbonCopies.Add(carbon_copy);
 
             EnvelopeDefinition envelope_definition = new EnvelopeDefinition();
-            envelope_definition.EmailSubject = "Please sign the " + "NDA.pdf" + " document";
+            envelope_definition.EmailSubject = "Please sign the " + "NDA.pdf" + " document.URL:" + webhook_url;
             envelope_definition.Documents = new List<Document>();
             envelope_definition.Documents.Add(document);
             envelope_definition.Recipients = recipients;
